@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+        <ul>
+            <li><a href="#addNewTask">Add New Task</a></li>
+            <li><a href="#tasks">Tasks</a></li>
+        </ul>
+    </header>
+    <main>
+        <marquee behavior="" direction="">Welcome to Task Management System</marquee>
+        <section class="add__task" id="addNewTask">
+            <div class="container">
+            <h1>Task Management System</h1>
+          <div class="d__flex">
+            <div class="form__box">
+              <form>
+                <h2>Add New Task</h2>
+                <div class="input__box">
+                  <input class="title" type="text" placeholder="Title" required />
+                  <span class="title__span"></span>
+                  <textarea
+                    class="description"
+                    rows="1"
+                    name=""
+                    id=""
+                    placeholder="Description"
+                    required
+                  ></textarea>
+                  <span class="description__span"></span>
+
+                  <input class="date" type="date" required/>
+                  <span class="date__span"></span>
+
+                  <select class="priority" name="" id="">
+                    <option value="low">Low priority</option>
+                    <option value="medium">Medium priority</option>
+                    <option value="high">High priority</option>
+                  </select>
+                  <span class="priority__span"></span>
+                </div>
+                <div class="btn__box">
+                  <button type="submit">Add Task</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="task__list-box" id="tasks">
+        <div class="container">
+            <div class="task__filters">
+                <h2>Tasks</h2>
+              <div class="task__filter-btns">
+                <button data-filter="all">All</button>
+                <button data-filter="active">Active</button>
+                <button data-filter="completed">Completed</button>
+                <button data-filter="overdue">Overdue</button>
+                <button data-filter="priority">Priority</button>
+              </div>
+              <ul class="task__list"></ul>
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

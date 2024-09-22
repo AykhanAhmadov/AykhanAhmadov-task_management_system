@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.d__flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.d-flex {
+  display: flex;
+}
+header {
+  padding: 20px;
+  background: #000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+
+    li {
+      a {
+        font-size: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
+        text-decoration: none;
+        color: #fff;
+        font-weight: 700;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          background-color: #fff;
+          bottom: 0;
+          left: 50%;
+          transition: 0.3s ease-in-out;
+        }
+        &:hover::before {
+          left: 0;
+          width: 100%;
+        }
+        // &:hover::after{
+        //     width: 100%;
+        // }
+      }
+    }
+  }
+}
+main {
+  padding-top: 5rem;
+  marquee {
+    padding-top: 10px;
+    color: #888;
+    font-size: clamp(0.75rem, 0.6071rem + 0.7143vw, 1.25rem);
+  }
+  .add__task {
+    padding-top: 20px;
+    h1 {
+      text-align: center;
+      font-size: clamp(1.125rem, 0.7321rem + 1.9643vw, 2.5rem);
+    }
+    .form__box {
+      margin-top: 40px;
+      width: 100%;
+      background-color: #fff;
+
+      //   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      //     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      //     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      border-radius: 10px;
+      padding: 40px 20px;
+      form {
+        h2 {
+          text-align: center;
+          font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
+          letter-spacing: 2px;
+        }
+        .input__box {
+          padding: 10px 20px;
+          input,
+          textarea,
+          select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #ccc;
+            position: relative;
+            font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+          }
+          span {
+            width: 100%;
+            position: relative;
+            display: inline-block;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 1px;
+              left: 0;
+              bottom: 15px;
+              background-color: black;
+              transition: 0.3s ease-in-out;
+            }
+          }
+          .description__span {
+            &::after {
+              bottom: 18px;
+            }
+          }
+          .title {
+            &:focus ~ .title__span::after {
+              width: 100%;
+            }
+          }
+          .description {
+            min-height: 50px;
+            max-height: 100px;
+            resize: vertical;
+            font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+            &:focus ~ .description__span::after {
+              width: 100%;
+            }
+          }
+          .date {
+            padding: 10px 0 10px 10px;
+            &:focus ~ .date__span::after {
+              width: 100%;
+            }
+          }
+          .priority {
+            &:focus ~ .priority__span::after {
+              width: 100%;
+            }
+          }
+          //   span {
+          //     background-color: #ccc;
+          //     width: 100%;
+          //     height: 2px;
+          //     display: inline-block;
+          //     position: relative;
+
+          //     &::after {
+          //       content: "";
+          //       position: absolute;
+          //       width: 0;
+          //       height: 2px;
+          //       bottom: 0;
+          //       left: 0;
+          //       background-color: #000;
+          //       transition: 0.3s ease-in-out;
+          //     }
+          //   }
+          //   input:focus ~ span::after {
+          //     width: 100%;
+          //   }
+        }
+        .btn__box {
+          display: flex;
+          justify-content: center;
+          button {
+            width: 40%;
+            padding: 10px 0;
+            margin-top: 10px;
+            font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.3s ease-in-out;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+      .list {
+        padding: 10px;
+        margin-top: 20px;
+        ul {
+          li {
+            list-style: none;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+  .task__list-box {
+    padding-top: 7rem;
+    padding-bottom: 40px;
+
+    .task__filters {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      padding: 40px;
+      h2 {
+        text-align: center;
+        font-size: clamp(1.5rem, 1.3929rem + 0.5357vw, 1.875rem);
+        letter-spacing: 2px;
+      }
+      .task__filter-btns {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 30px 0;
+        button {
+          padding: 10px 20px;
+          cursor: pointer;
+          background-color: #fff;
+          border: 1px solid blue;
+          color: blue;
+          border-radius: 5px;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            background-color: blue;
+            color: #fff;
+            border-color: #fff;
+          }
+        }
+        .active__btn {
+          background-color: blue;
+          color: #fff;
+        }
+      }
+      .task__list {
+        list-style: none;
+        max-height: 350px;
+        overflow-y: auto;
+        li {
+          background-color: #fff;
+          padding: 12px 10px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 30px;
+          line-height: 30px;
+          .icon__btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            button {
+              border: none;
+              background-color: #fff;
+              padding: 5px 10px;
+              border: 1px solid blue;
+              border-radius: 5px;
+              color: blue;
+              cursor: pointer;
+              &:hover {
+                border: 1px dashed blue;
+              }
+            }
+            .del__btn,
+            .edit__btn {
+              color: blue;
+              cursor: pointer;
+              font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+            }
+            .del__btn {
+              &:hover {
+                color: red;
+              }
+            }
+            .edit__btn {
+              &:hover {
+                color: green;
+              }
+            }
+          }
+        }
+        .completed {
+          .list__content {
+            text-decoration: line-through;
+            opacity: 0.5;
+          }
+          .icon__btn {
+            button {
+              border: 1px dashed blue;
+              &:hover{
+                border: 1px solid blue;
+              }
+            }
+          }
+        }
+        .priority__low {
+          border-left: 5px solid green;
+        }
+        .priority__medium {
+          border-left: 5px solid orange;
+        }
+        .priority__high {
+          border-left: 5px solid red;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  main {
+    marquee {
+      padding-top: 0;
+    }
+    .add__task {
+      padding-top: 12px;
+      .form__box {
+        width: 100%;
+        margin-top: 20px;
+        padding: 24px 10px;
+        form {
+          h2 {
+            letter-spacing: 1px;
+          }
+          .input__box{
+            padding: 0;
+          }
+          .btn__box{
+            button{
+                width: 50%;
+            }
+          }
+        }
+      }
+    }
+    .task__list-box {
+        padding-top: 3rem;
+      .task__filters {
+        padding: 20px;
+        .task__filter-btns {
+          flex-wrap: wrap;
+          gap: 5px;
+          button{
+            padding: 5px 10px;
+          }
+        }
+        .task__list {
+          li {
+            display: block;
+            line-height: 22px;
+            .list__content {
+                font-size: 14px;
+            }
+            .icon__btn {
+                padding-top: 10px;
+                .complete__btn{
+                    padding: 5px;
+                    font-size: 10px;
+                }
+            }
+          }
+        }
+      }
+    }
+  }
+}
